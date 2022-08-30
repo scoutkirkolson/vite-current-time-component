@@ -8,7 +8,7 @@ import { ref, computed, watch } from 'vue';
 const props = defineProps({
   timeZone: {
     type: String,
-    default: 'America/Los_Angeles',
+    default: 'Europe/Amsterdam',
   },
 });
 
