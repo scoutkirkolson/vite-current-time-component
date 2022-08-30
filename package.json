@@ -1,7 +1,7 @@
 {
   "name": "@scoutkirkolson/vite-current-time-component",
   "version": "0.0.1",
-  "homepage": "https://scoutkirkolson.github.io/vite-current-time-component",
+  "homepage": ".",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
