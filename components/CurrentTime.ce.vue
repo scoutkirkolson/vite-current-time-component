@@ -6,7 +6,7 @@
 </template>
 
 <script setup>
-import { ref, reactive, computed, watch } from 'vue';
+import { ref, reactive, computed, watch, onMounted } from 'vue';
 
 const props = defineProps({
   timeZone: {
@@ -31,7 +31,11 @@ function changeTimeZone(event) {
   currentTimeZone.value = event.detail?.timeZone || 'Europe/Amsterdam'
 }
 
-document.querySelector('current-time').addEventListener('timezonechange', changeTimeZone)
+function listenEvents() {
+  document.querySelector('current-time').addEventListener('timezonechange', changeTimeZone)
+}
+
+onMounted(listenEvents)
 
 setInterval(() => {
   currentDateTime.value = new Date();
