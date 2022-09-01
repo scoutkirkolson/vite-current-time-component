@@ -6,7 +6,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: './main.js',
-      formats: ['es'],
+      formats: ['es', 'umd'],
       fileName: 'vite-current-time',
       name: 'ViteCurrentTime',
     },
@@ -18,7 +18,11 @@ export default defineConfig({
     // Reduce bloat from legacy polyfills.
     target: 'esnext',
     // Leave minification up to applications.
-    minify: 'esbuild',
+    minify: true,
+  },
+  esbuild: {
+    minify: true,
+    minifySyntax: true
   },
   plugins: [
     vue({ customElement: true }),
