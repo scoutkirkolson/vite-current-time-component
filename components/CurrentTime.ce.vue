@@ -1,5 +1,5 @@
 <template>
-  <div><slot name="prefix" /> {{ displayTime }}</div>
+  <div><slot name="prefix" />Time: {{ displayTime }}</div>
 </template>
 
 <script setup>
@@ -16,7 +16,7 @@ const emit = defineEmits(['datechange']);
 
 const currentDateTime = ref(new Date());
 const displayTime = computed(() =>
-  currentDateTime.value.toLocaleString('en-US', {
+  currentDateTime.value.toLocaleString('nl-NL', {
     timeZone: props.timeZone,
   })
 );
