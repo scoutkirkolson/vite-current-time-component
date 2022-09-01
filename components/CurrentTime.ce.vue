@@ -36,8 +36,8 @@ function changeTimeZone(event) {
 }
 
 function listenEvents() {
-  console.log('listenEvents5')
-  document.querySelector(props.id || 'current-time').addEventListener('timezonechange', changeTimeZone)
+  console.log('listenEvents6', props)
+  document.querySelector(props.id ? props.id : 'current-time').addEventListener('timezonechange', changeTimeZone)
   //document.addEventListener('timezonechange', changeTimeZone)
 }
 
