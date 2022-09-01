@@ -27,14 +27,14 @@ const displayTime = computed(() =>
 );
 
 function changeTimeZone(event) {
-  console.log(event.detail)
+  console.log('changeTimeZone', event.detail)
   currentTimeZone.value = event.detail?.timeZone || 'Europe/Amsterdam'
 }
 
 function listenEvents() {
-  console.log('listenEvents2')
-  //document.querySelector('current-time').addEventListener('timezonechange', changeTimeZone)
-  document.addEventListener('timezonechange', changeTimeZone)
+  console.log('listenEvents3')
+  document.querySelector('current-time').addEventListener('timezonechange', changeTimeZone)
+  //document.addEventListener('timezonechange', changeTimeZone)
 }
 
 onMounted(listenEvents)
