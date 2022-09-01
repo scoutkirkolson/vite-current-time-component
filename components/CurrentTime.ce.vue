@@ -9,6 +9,10 @@
 import { ref, reactive, computed, watch, onMounted } from 'vue';
 
 const props = defineProps({
+  id: {
+    type: String,
+    default: '',
+  },
   timeZone: {
     type: String,
     default: 'Europe/Amsterdam',
@@ -32,9 +36,9 @@ function changeTimeZone(event) {
 }
 
 function listenEvents() {
-  console.log('listenEvents4')
-  //document.querySelector('current-time').addEventListener('timezonechange', changeTimeZone)
-  document.addEventListener('timezonechange', changeTimeZone)
+  console.log('listenEvents5')
+  document.querySelector(props.id || 'current-time').addEventListener('timezonechange', changeTimeZone)
+  //document.addEventListener('timezonechange', changeTimeZone)
 }
 
 onMounted(listenEvents)
