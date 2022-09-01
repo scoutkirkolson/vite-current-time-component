@@ -32,9 +32,9 @@ function changeTimeZone(event) {
 }
 
 function listenEvents() {
-  console.log('listenEvents3')
-  document.querySelector('current-time').addEventListener('timezonechange', changeTimeZone)
-  //document.addEventListener('timezonechange', changeTimeZone)
+  console.log('listenEvents4')
+  //document.querySelector('current-time').addEventListener('timezonechange', changeTimeZone)
+  document.addEventListener('timezonechange', changeTimeZone)
 }
 
 onMounted(listenEvents)
