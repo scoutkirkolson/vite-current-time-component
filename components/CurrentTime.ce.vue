@@ -1,5 +1,5 @@
 <template>
-  <div class="current-time-component" v-on:timezonechange="changeTimeZone">
+  <div class="current-time-component" >
     <slot name="prefix" />
     {{ displayTime }} ...
   </div>
