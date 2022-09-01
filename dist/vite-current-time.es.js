@@ -6151,6 +6151,19 @@ const render = ((...args) => {
     ensureRenderer().render(...args);
 });
 
+var _style_0 = ".current-time-component{color:red}\n";
+
+var _export_sfc = (sfc, props) => {
+  const target = sfc.__vccOpts || sfc;
+  for (const [key, val] of props) {
+    target[key] = val;
+  }
+  return target;
+};
+
+const _hoisted_1 = { class: "current-time-component" };
+
+
 const _sfc_main = {
   __name: 'CurrentTime.ce',
   props: {
@@ -6181,16 +6194,17 @@ setInterval(() => {
 }, 1000);
 
 return (_ctx, _cache) => {
-  return (openBlock(), createElementBlock("div", null, [
+  return (openBlock(), createElementBlock("div", _hoisted_1, [
     renderSlot(_ctx.$slots, "prefix"),
-    createTextVNode("Current time: " + toDisplayString(unref(displayTime)), 1)
+    createTextVNode(" " + toDisplayString(unref(displayTime)), 1)
   ]))
 }
 }
 
 };
+var CurrentTime = /*#__PURE__*/_export_sfc(_sfc_main, [['styles',[_style_0]]]);
 
-const CurrentTimeComponent = defineCustomElement(_sfc_main);
+const CurrentTimeComponent = defineCustomElement(CurrentTime);
 
 customElements.define('current-time', CurrentTimeComponent);
 
