@@ -1,5 +1,8 @@
 <template>
-  <div><slot name="prefix" />Current time: {{ displayTime }}</div>
+  <div class="current-time-component">
+    <slot name="prefix" />
+    {{ displayTime }}
+  </div>
 </template>
 
 <script setup>
@@ -26,3 +29,9 @@ setInterval(() => {
   emit('datechange', displayTime);
 }, 1000);
 </script>
+
+<style>
+.current-time-component {
+  color: red;
+}
+</style>
