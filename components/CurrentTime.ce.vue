@@ -32,6 +32,7 @@ function changeTimeZone(event) {
 }
 
 function listenEvents() {
+  console.log('listenEvents')
   document.querySelector('current-time').addEventListener('timezonechange', changeTimeZone)
 }
 
