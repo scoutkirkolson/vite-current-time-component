@@ -6,6 +6,7 @@
     "dev": "vite",
     "build": "vite build",
     "deploy": "node scripts/gh-pages-deploy.js",
+    "commit-and-deploy": "node scripts/gh-pages-commit-and-deploy.js",
     "serve": "vite preview"
   },
   "type": "module",

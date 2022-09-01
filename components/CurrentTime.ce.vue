@@ -1,5 +1,5 @@
 <template>
-  <div><slot name="prefix" />Time: {{ displayTime }}</div>
+  <div><slot name="prefix" />Current time: {{ displayTime }}</div>
 </template>
 
 <script setup>
