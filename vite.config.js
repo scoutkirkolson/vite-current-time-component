@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite';
 
 import vue from '@vitejs/plugin-vue';
-import { ViteMinifyPlugin } from 'vite-plugin-minify';
 
 export default defineConfig({
   build: {
@@ -19,10 +18,9 @@ export default defineConfig({
     // Reduce bloat from legacy polyfills.
     target: 'esnext',
     // Leave minification up to applications.
-    minify: false,
+    minify: true,
   },
   plugins: [
-    ViteMinifyPlugin({}),
     vue({ customElement: true }),
   ],
   base: '/vite-current-time-component',
