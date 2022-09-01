@@ -6170,7 +6170,7 @@ const props = __props;
 
 const currentDateTime = ref(new Date());
 const displayTime = computed(() =>
-  currentDateTime.value.toLocaleString('en-US', {
+  currentDateTime.value.toLocaleString('nl-NL', {
     timeZone: props.timeZone,
   })
 );
@@ -6183,7 +6183,7 @@ setInterval(() => {
 return (_ctx, _cache) => {
   return (openBlock(), createElementBlock("div", null, [
     renderSlot(_ctx.$slots, "prefix"),
-    createTextVNode(" " + toDisplayString(unref(displayTime)), 1)
+    createTextVNode("Current time: " + toDisplayString(unref(displayTime)), 1)
   ]))
 }
 }

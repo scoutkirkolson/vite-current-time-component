@@ -1,5 +1,7 @@
 import { defineConfig } from 'vite';
+
 import vue from '@vitejs/plugin-vue';
+import { ViteMinifyPlugin } from 'vite-plugin-minify';
 
 export default defineConfig({
   build: {
@@ -19,6 +21,9 @@ export default defineConfig({
     // Leave minification up to applications.
     minify: false,
   },
-  plugins: [vue({ customElement: true })],
+  plugins: [
+    ViteMinifyPlugin({}),
+    vue({ customElement: true }),
+  ],
   base: '/vite-current-time-component',
 });
