@@ -6161,9 +6161,6 @@ var _export_sfc = (sfc, props) => {
   return target;
 };
 
-const _hoisted_1 = { class: "current-time-component" };
-
-
 const _sfc_main = {
   __name: 'CurrentTime.ce',
   props: {
@@ -6182,11 +6179,16 @@ const props = __props;
 
 
 const currentDateTime = ref(new Date());
+const currentTimeZone = ref(props.timeZone);
 const displayTime = computed(() =>
   currentDateTime.value.toLocaleString('nl-NL', {
-    timeZone: props.timeZone,
+    timeZone: currentTimeZone,
   })
 );
+
+const changeTimeZone = (event) => {
+  console.log(event);
+};
 
 setInterval(() => {
   currentDateTime.value = new Date();
@@ -6194,10 +6196,13 @@ setInterval(() => {
 }, 1000);
 
 return (_ctx, _cache) => {
-  return (openBlock(), createElementBlock("div", _hoisted_1, [
+  return (openBlock(), createElementBlock("div", {
+    class: "current-time-component",
+    onTimezonechange: changeTimeZone
+  }, [
     renderSlot(_ctx.$slots, "prefix"),
     createTextVNode(" " + toDisplayString(unref(displayTime)), 1)
-  ]))
+  ], 32))
 }
 }
 

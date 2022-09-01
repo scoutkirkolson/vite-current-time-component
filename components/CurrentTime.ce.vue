@@ -1,12 +1,12 @@
 <template>
-  <div class="current-time-component">
+  <div class="current-time-component" v-on:timezonechange="changeTimeZone">
     <slot name="prefix" />
-    {{ displayTime }}
+    {{ displayTime }} ...
   </div>
 </template>
 
 <script setup>
-import { ref, computed, watch } from 'vue';
+import { ref, reactive, computed, watch } from 'vue';
 
 const props = defineProps({
   timeZone: {
@@ -18,11 +18,20 @@ const props = defineProps({
 const emit = defineEmits(['datechange']);
 
 const currentDateTime = ref(new Date());
+const currentTimeZone = ref(props.timeZone);
+
 const displayTime = computed(() =>
   currentDateTime.value.toLocaleString('nl-NL', {
-    timeZone: props.timeZone,
+    timeZone: currentTimeZone.value,
   })
 );
+
+function changeTimeZone(event) {
+  console.log(event.detail)
+  currentTimeZone.value = event.detail?.timeZone || 'Europe/Amsterdam'
+}
+
+document.querySelector('current-time').addEventListener('timezonechange', changeTimeZone)
 
 setInterval(() => {
   currentDateTime.value = new Date();
