@@ -18,7 +18,7 @@ export default defineConfig({
     // Reduce bloat from legacy polyfills.
     target: 'esnext',
     // Leave minification up to applications.
-    minify: true,
+    minify: 'esbuild',
   },
   plugins: [
     vue({ customElement: true }),
