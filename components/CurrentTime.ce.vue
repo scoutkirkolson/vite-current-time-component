@@ -36,8 +36,10 @@ function changeTimeZone(event) {
 }
 
 function listenEvents() {
-  console.log('listenEvents7', props)
-  document.querySelector(props.id ? ('#' + props.id) : 'current-time').addEventListener('timezonechange', changeTimeZone)
+  console.log('listenEvents', props)
+  document
+    .querySelector(props.id ? ('#' + props.id) : 'current-time')
+    .addEventListener('timezonechange', changeTimeZone)
   //document.addEventListener('timezonechange', changeTimeZone)
 }
 
@@ -51,6 +53,6 @@ setInterval(() => {
 
 <style>
 .current-time-component {
-  color: red;
+  color: green;
 }
 </style>

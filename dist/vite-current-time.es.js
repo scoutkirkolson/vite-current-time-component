@@ -6161,9 +6161,16 @@ var _export_sfc = (sfc, props) => {
   return target;
 };
 
+const _hoisted_1 = { class: "current-time-component" };
+
+
 const _sfc_main = {
   __name: 'CurrentTime.ce',
   props: {
+  id: {
+    type: String,
+    default: '',
+  },
   timeZone: {
     type: String,
     default: 'Europe/Amsterdam',
@@ -6180,15 +6187,25 @@ const props = __props;
 
 const currentDateTime = ref(new Date());
 const currentTimeZone = ref(props.timeZone);
+
 const displayTime = computed(() =>
   currentDateTime.value.toLocaleString('nl-NL', {
-    timeZone: currentTimeZone,
+    timeZone: currentTimeZone.value,
   })
 );
 
-const changeTimeZone = (event) => {
-  console.log(event);
-};
+function changeTimeZone(event) {
+  console.log('changeTimeZone', event.detail);
+  currentTimeZone.value = event.detail?.timeZone || 'Europe/Amsterdam';
+}
+
+function listenEvents() {
+  console.log('listenEvents7', props);
+  document.querySelector(props.id ? ('#' + props.id) : 'current-time').addEventListener('timezonechange', changeTimeZone);
+  //document.addEventListener('timezonechange', changeTimeZone)
+}
+
+onMounted(listenEvents);
 
 setInterval(() => {
   currentDateTime.value = new Date();
@@ -6196,13 +6213,10 @@ setInterval(() => {
 }, 1000);
 
 return (_ctx, _cache) => {
-  return (openBlock(), createElementBlock("div", {
-    class: "current-time-component",
-    onTimezonechange: changeTimeZone
-  }, [
+  return (openBlock(), createElementBlock("div", _hoisted_1, [
     renderSlot(_ctx.$slots, "prefix"),
-    createTextVNode(" " + toDisplayString(unref(displayTime)), 1)
-  ], 32))
+    createTextVNode(" " + toDisplayString(unref(displayTime)) + " ... ", 1)
+  ]))
 }
 }
 
@@ -6213,11 +6227,5 @@ const CurrentTimeComponent = defineCustomElement(CurrentTime);
 
 customElements.define('current-time', CurrentTimeComponent);
 
-document
-  .querySelector('current-time')
-  .addEventListener('datechange', recordTime);
-
-function recordTime(event) {
-  console.log(event.detail[0].value);
-}
+export { CurrentTime as default };
 //# sourceMappingURL=vite-current-time.es.js.map
