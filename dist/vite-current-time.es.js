@@ -6151,7 +6151,7 @@ const render = ((...args) => {
     ensureRenderer().render(...args);
 });
 
-var _style_0 = ".current-time-component{color:red}\n";
+var _style_0 = ".current-time-component{color:green}\n";
 
 var _export_sfc = (sfc, props) => {
   const target = sfc.__vccOpts || sfc;
@@ -6200,8 +6200,10 @@ function changeTimeZone(event) {
 }
 
 function listenEvents() {
-  console.log('listenEvents7', props);
-  document.querySelector(props.id ? ('#' + props.id) : 'current-time').addEventListener('timezonechange', changeTimeZone);
+  console.log('listenEvents', props);
+  document
+    .querySelector(props.id ? ('#' + props.id) : 'current-time')
+    .addEventListener('timezonechange', changeTimeZone);
   //document.addEventListener('timezonechange', changeTimeZone)
 }
 

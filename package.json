@@ -1,7 +1,7 @@
 {
   "name": "@scoutkirkolson/vite-current-time-component",
   "description": "Vue component built with Vite for displaying current time.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Kirk Olson",
   "license": "UNLICENSED",
   "keywords": [
@@ -20,6 +20,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build-externalize": "vite build --config vite.config.externalize.js",
     "deploy": "node scripts/gh-pages-deploy.js",
     "commit-and-deploy": "node scripts/gh-pages-commit-and-deploy.js",
     "serve": "vite preview"

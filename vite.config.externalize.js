@@ -7,13 +7,13 @@ export default defineConfig({
     lib: {
       entry: './main.js',
       formats: ['es', 'umd'],
-      fileName: 'vite-current-time',
+      fileName: 'vite-current-time-min',
       name: 'ViteCurrentTime',
     },
-    //rollupOptions: {
-    //  // Externalize deps that shouldn't be bundled into the library.
-    //  external: ['vue', '@vueuse/core'],
-    //},
+    rollupOptions: {
+      // Externalize deps that shouldn't be bundled into the library.
+      external: ['vue', '@vueuse/core'],
+    },
     sourcemap: true,
     // Reduce bloat from legacy polyfills.
     target: 'esnext',
