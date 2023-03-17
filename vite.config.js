@@ -29,4 +29,7 @@ export default defineConfig({
     vue({ customElement: true }),
   ],
   base: '/vite-current-time-component',
+  preview: {
+    port: 8910,
+  },
 });

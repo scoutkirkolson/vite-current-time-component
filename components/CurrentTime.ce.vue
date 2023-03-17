@@ -53,6 +53,6 @@ setInterval(() => {
 
 <style>
 .current-time-component {
-  color: green;
+  color: purple;
 }
 </style>
