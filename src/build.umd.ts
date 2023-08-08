@@ -92,6 +92,8 @@ class VueCustomComponent extends HTMLElement {
         this._numberProps.push(propName);
       }
 
+      console.log(propName);
+
       this.setAttr(propName);
     });
 
