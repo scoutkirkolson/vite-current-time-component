@@ -35,6 +35,8 @@ class VueCustomComponent extends HTMLElement {
       val = Number(val);
     }
 
+    console.log('prop:' + attrName +'=' + val);
+
     this._props[attrName] = val;
   }
 
