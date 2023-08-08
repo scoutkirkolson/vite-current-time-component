@@ -10,7 +10,7 @@ export default defineConfig({
     lib: {
       entry: './src/build.umd.ts',
       formats: ['umd'],
-      fileName: 'vite-current-time-min',
+      fileName: 'vite-current-time-full',
       name: 'ViteCurrentTimeComponent',
     },
     sourcemap: true,
@@ -27,7 +27,7 @@ export default defineConfig({
   plugins: [
     vue({ customElement: true }),
   ],
-  base: '/vite-current-time-min',
+  base: '/vite-current-time-full',
   preview: {
     port: 8910,
   },

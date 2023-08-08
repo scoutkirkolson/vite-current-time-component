@@ -28,7 +28,7 @@ export default defineConfig({
   plugins: [
     vue({ customElement: true }),
   ],
-  base: '/vite-current-time',
+  base: '/vite-current-time-full',
   preview: {
     port: 8910,
   },
