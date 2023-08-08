@@ -24,6 +24,8 @@ const emit = defineEmits(['datechange']);
 const currentDateTime = ref(new Date());
 const currentTimeZone = ref(props.timeZone);
 
+console.log('props', props)
+
 const displayTime = computed(() =>
   currentDateTime.value.toLocaleString('nl-NL', {
     timeZone: currentTimeZone.value || 'Europe/Amsterdam',
