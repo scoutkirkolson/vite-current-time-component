@@ -1,6 +1,8 @@
-import { defineCustomElement } from 'vue';
+import { defineCustomElement } from 'vue'
 
-import CurrentTime from './components/CurrentTime.ce.vue';
+import CurrentTime from './components/CurrentTime.ce.vue'
+
+import './style.css'
 
 const CurrentTimeComponent = defineCustomElement(CurrentTime)
 

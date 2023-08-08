@@ -10,7 +10,8 @@
   ],
   "homepage": ".",
   "files": [
-    "dist"
+    "dist",
+    "src/style.css"
   ],
   "main": "./dist/vite-current-time-min.umd.js",
   "module": "./dist/vite-current-time-min.js",
