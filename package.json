@@ -1,31 +1,50 @@
 {
   "name": "@scoutkirkolson/vite-current-time-component",
   "description": "Vue component built with Vite for displaying current time.",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "Kirk Olson",
   "license": "UNLICENSED",
+  "type": "module",
   "keywords": [
     "test"
   ],
   "homepage": ".",
-  "files": ["dist"],
-  "main": "./dist/vite-current-time.umd.js",
-  "module": "./dist/vite-current-time.es.js",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/vite-current-time-min.umd.js",
+  "module": "./dist/vite-current-time-min.js",
   "exports": {
     ".": {
-      "import": "./dist/vite-current-time.es.js",
-      "require": "./dist/vite-current-time.umd.js"
+      "require": "./dist/vite-current-time-full.umd.cjs"
+    },
+    "./umd-min": {
+      "require": "./dist/vite-current-time-min.umd.cjs"
+    },
+    "./umd-full": {
+      "require": "./dist/vite-current-time-full.umd.cjs"
+    },
+    "./min": {
+      "import": "./dist/vite-current-time-min.js"
+    },
+    "./full": {
+      "import": "./dist/vite-current-time-full.js"
     }
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "build-externalize": "vite build --config vite.config.externalize.js",
+    "build:es-full": "vite build --config vite.config.es.full.js",
+    "build:es-min": "vite build --config vite.config.es.min.js",
+    "build:umd-full": "vite build --config vite.config.umd.full.js",
+    "build:umd-min": "vite build --config vite.config.umd.min.js",
+    "build:watch-es-full": "vite build --watch --config vite.config.es.full.js",
+    "build:watch-es-min": "vite build --watch --config vite.config.es.min.js",
+    "build:watch-umd-full": "vite build --watch --config vite.config.umd.full.js",
+    "build:watch-umd-min": "vite build --watch --config vite.config.umd.min.js",
     "deploy": "node scripts/gh-pages-deploy.js",
     "commit-and-deploy": "node scripts/gh-pages-commit-and-deploy.js",
     "serve": "vite preview"
   },
-  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/scoutkirkolson/vite-current-time-component.git"
@@ -33,10 +52,11 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.9.1",
     "execa": "^6.1.0",
-    "vite": "^2.4.4",
+    "vite": "^4.3.9",
     "vite-plugin-minify": "^1.5.2"
   },
   "dependencies": {
     "vue": "3.2"
-  }
+  },
+  "packageManager": "yarn@3.6.1"
 }
