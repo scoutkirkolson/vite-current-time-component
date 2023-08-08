@@ -26,7 +26,7 @@ const currentTimeZone = ref(props.timeZone);
 
 const displayTime = computed(() =>
   currentDateTime.value.toLocaleString('nl-NL', {
-    timeZone: currentTimeZone.value,
+    timeZone: currentTimeZone.value || 'Europe/Amsterdam',
   })
 );
 
